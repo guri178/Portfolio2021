@@ -1,0 +1,287 @@
+@charset "utf-8";
+
+/* all */
+
+* {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+/* article-header */
+
+header {
+    position: relative;
+    height: 200px;
+    background-image: url(img/background.png);
+}
+
+header::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 7px 7px #444444;
+}
+
+header .article-site-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #330000;
+    border: #fff solid 3px;
+    filter: drop-shadow(0 0 10px black);
+}
+
+/* article-nav */
+
+nav {
+    width: 100%;
+    position: absolute;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s;
+}
+
+nav .nav-title {
+    margin-top: 40px;
+    color: #CCCC66;
+    text-align: center;
+    font-size: 2em;
+}
+
+nav .hamburger-menu {
+    margin: 80px 50px 40px;
+}
+
+nav .hamburger-menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+nav .hamburger-menu li {
+    margin-bottom: 50px;
+}
+
+nav .hamburger-menu a {
+    color: #CCCC66;
+    font-size: 1.5em;
+    border: #CCCC66 solid 2px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+nav .hamburger-menu a:hover {
+    background: #CCCC66;
+    color: #000;
+    border: #000 solid 2px;
+}
+
+nav .all-list-link {
+    text-align: center;
+    margin: 30px 0 40px;
+}
+
+nav .all-list-link a {
+    text-align: center;
+    color: #CCCC66;
+    font-size: 1.5em;
+    border-bottom: #CCCC66 solid 2px;
+    transition: 0.3s;
+}
+
+nav .all-list-link a:hover {
+    background: #CCCC66;
+    color: #000;
+    border-bottom: #000 solid 2px;
+}
+
+/* article-hamburger */
+
+#hamburger {
+    display: block;
+    position: absolute;
+    top: 230px;
+    left: 50px;
+    width: 50px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.line-visual {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #CCCC66;
+    transition: 0.7s;
+}
+
+#line1 {
+    top: 0;
+}
+#line2 {
+    top: 20px;
+}
+#line3 {
+    bottom: 0;
+}
+
+/* jsにて追加 */
+.in-nav {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.7s;
+}
+.line-visual-click1 {
+    transform: rotate(-45deg) translateY(14px) translateX(-14px);
+}
+.line-visual-click2 {
+    opacity: 0;
+}
+.line-visual-click3 {
+    transform: rotate(45deg) translateY(-14px) translateX(-14px);
+}
+
+/* article-main */
+
+main {
+    padding-top: 30px;
+    background-color: #444444;
+}
+
+main .article-title {
+    font-size: 3em;
+    text-align: center;
+    color: #CCCC66;
+}
+
+main .date {
+    margin-top: 20px;
+    text-align: center;
+    color: #CCCC66;
+    font-size: 1em;
+}
+
+main .article {
+    margin: 40px 100px 0;
+    text-align: start;
+    color: #CCCC66;
+    font-size: 1.5em;
+    line-height: 2;
+}
+
+main .article img {
+    width: 40%;
+    height: auto;
+    margin: 20px 10px;
+    
+}
+
+.article-pagination {
+    margin-top: 40px;
+    position: relative;
+    padding: 20px;
+}
+
+.article-pagination .p-left {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: #CCCC66 solid 3px;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(-45deg);
+    top: 30px;
+    left: 30%;
+}
+
+.article-pagination .p-right {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: #CCCC66 solid 3px;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(45deg);
+    top: 30px;
+    right: 30%;
+}
+
+.article-pagination a {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.article-pagination a:hover {
+    opacity: 1;
+}
+
+.article-pagination .p-number {
+    color: #CCCC66;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+/* article-footer */
+
+footer {
+    background-color:#000;
+    color: #CCCC66;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer p {
+    padding-top: 15px;
+}
+
+@media screen and (max-width:1024px) {
+    main .article-title {
+        margin-top: 70px;   
+    }
+
+    main .article img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    
+    main .article {
+        margin: 40px 30px 0;
+    }
+}
+
+@media screen and (max-width : 450px) {
+    main .article-title {
+        margin: 70px 30px 0;
+        font-size: 2em;   
+    }
+
+    #hamburger {
+        left: 20px;
+    }
+
+    .article-pagination .p-left {
+        left: 10%;
+    }
+
+    .article-pagination .p-right {
+        right: 10%;
+    }
+}

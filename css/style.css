@@ -1,0 +1,354 @@
+@charset "utf-8";
+
+/* all */
+
+* {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+/* AguriBlog-header */
+
+header {
+    position: relative;
+    background-image: url(img/background.png);
+    background-size: cover;
+    height: 100vh;
+    margin: 0px;
+    z-index: 1;
+}
+
+header::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 7px 7px #000;
+}
+
+#site-title {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    border: #fff solid 3px;
+    padding: 10px 20px;
+    background-color: #330000;
+    filter: drop-shadow(0 0 10px black);
+    z-index: 2;
+}
+
+#site-title a {
+    color: #fff;
+}
+
+#heading {
+    color: #fff;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#heading .heading-title {
+    color: #330000;
+    font-size: 2em;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 10px #000);
+}
+
+#heading p {
+    color: #330000;
+    margin: 10px 0;
+    filter: drop-shadow(0 0 10px #000);
+}
+
+#content-list-link {
+    position: absolute;
+    top: 480px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+#content-list-link a {
+    color: #fff;
+    font-size: 1em;
+    border: #fff solid 1px;
+    padding: 10px 40px;
+    transition: 1s;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#content-list-link a:hover {
+    background-color: #000;
+}
+
+/* AguriBlog-main-LatestInformation */
+
+#lineup {
+    background-color: #000;
+    position: relative;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 50px 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    color: #CCCC66;
+}
+
+.slider-item img {
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+    
+}
+
+.slider-item img ,.slider-item-name {
+    padding: 0 20px;
+}
+
+.slider-item .slider-item-name {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #CCCC66;
+    font-size: 1.2em;
+}
+
+.slider-container {
+    position: relative;
+    width: 900px;
+    height: 250px;
+    margin: 50px auto 0;
+}
+
+.slider-box {
+    overflow: hidden;
+}
+
+.slider-list {
+    list-style: none;
+    display: flex;
+
+}
+
+.slider-item {
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    opacity: 0.5;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid  #CCCC66;
+    border-left: 2px solid #CCCC66;
+    cursor: pointer;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    opacity: 0.5;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid #CCCC66;
+    border-right: 2px solid #CCCC66;
+    cursor: pointer;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.prev:hover,.next:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+
+/* responsiveSite-news */
+#lineup .responsiveSite-news {
+    margin: 50px auto 10px;
+    width: 300px;
+    height: 250px;
+    display: none;
+}
+
+#lineup .responsiveSite-news-p {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #CCCC66;
+    font-size: 1.3em;
+}
+
+/* AguriBlog-main-genre */
+
+#genre {
+    background-color: #444444;
+    padding: 50px 100px 0;
+}
+
+#genre .genre-list {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+}
+
+#genre .genre-item {
+    margin: 0 20px 50px;
+    transition: 0.5s;
+}
+
+#genre .genre-item:hover {
+    transform: scale3d(1.1,1.1,1);
+}
+
+#genre img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+#genre .genre-item-name {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #CCCC66;
+    font-size: 1em;
+}
+
+/* わからず実装できない */
+/* .pagination {
+    margin-top: 30px;
+    position: absolute;
+    top: auto;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border: red 2px solid;
+    width: 25%;
+}
+
+.pagination-list {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.page-counter {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000;
+    border: #CCCC66 solid 2px;
+}
+
+.page-counter-check {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #CCCC66;
+    border: #CCCC66 solid 2px;
+} */
+
+/* AguriBlog-footer */
+
+footer {
+    background-color:#000;
+    color: #CCCC66;
+    text-align: center;
+    padding: 15px 0;
+}
+
+
+/* responsiveSite */
+@media screen and (max-width:1024px)  {
+    header {
+        height: 100vh;
+    }
+
+    #heading {
+        top: 150px;
+    }
+
+    #heading p {
+       text-align: start;
+       margin: 10px 30px;
+    }
+
+    #content-list-link {
+        top: 470px;
+    }
+
+    .slider-container {
+        width: 300px;
+    }
+
+    .prev {
+        top: 45%;
+        left: -20%;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .next {
+        top: 45%;
+        right: -20%;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width : 450px) {
+    #site-title {
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    header {
+        height: 90vh;
+    }
+
+    #heading .heading-title {
+        display: none;
+    }
+
+    #heading {
+        top: 200px;
+    }
+
+    #heading p {
+        text-align: start;
+    }
+
+    #content-list-link {
+        top: 500px;
+    }
+
+    .title {
+        margin: 0 20px;
+    }
+}
